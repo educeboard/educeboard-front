@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 536870912,
+"dataUrl": "educeboard.data.unityweb",
+"asmCodeUrl": "educeboard.asm.code.unityweb",
+"asmMemoryUrl": "educeboard.asm.memory.unityweb",
+"asmFrameworkUrl": "educeboard.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#80858B"
+}
