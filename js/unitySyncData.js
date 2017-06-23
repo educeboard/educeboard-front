@@ -192,8 +192,8 @@ unitySendData
 			,nowTime = options.nowTime
 			,$timeLength = options.$timeLength
 			,$timePosition = options.$timePosition
-			,seekbarWidth = options.seekbarWidth
 			,soundPositionWidth = options.soundPositionWidth
+			,seekbarWidth = options.seekbarWidth - soundPositionWidth
 			,percent = 0
 			,resultNum = 0;
 
@@ -240,11 +240,11 @@ unitySendData
 			,$timePosition = options.$timePosition
 			,$timeLength = options.$timeLength
 			,positionLeft = parseFloat($timePosition[0].style.left)
-			,seekbarWidth = options.seekbarWidth
 			,soundPositionWidth = options.soundPositionWidth
+			,seekbarWidth = options.seekbarWidth - soundPositionWidth
 
 
-			,resultTime = (positionLeft - soundPositionWidth * 0.5) / (seekbarWidth - soundPositionWidth) * soundLength;
+			,resultTime = (positionLeft - soundPositionWidth * 0.5) / seekbarWidth * soundLength;
 
 			console.log(resultTime);
 
