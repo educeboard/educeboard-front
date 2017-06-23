@@ -76,7 +76,7 @@ unitySendData
 				,options = $this.data(namespace);
 
 				options.seekbarWidth = options.$seekbar.innerWidth();
-				options.soundPositionWidth = options.$timePosition.innerWidth();
+				options.soundPositionWidth = options.$timePosition.outerWidth();
 
 				options.volumeBarWidth = options.$volumeBar.innerWidth();
 				options.volumePositionWidth = options.$volumePosition.innerWidth();
@@ -220,7 +220,7 @@ unitySendData
 			}
 
 			$timeLength.css({
-				width:resultNum - soundPositionWidth * 0.5 + 'px'
+				width:resultNum + soundPositionWidth * 0.5 + 'px'
 			});
 
 			$timePosition.css({
@@ -239,13 +239,12 @@ unitySendData
 			,soundLength = options.soundLength
 			,$timePosition = options.$timePosition
 			,$timeLength = options.$timeLength
-			,seekbarWidth = options.seekbarWidth
+			,positionLeft = parseFloat($timePosition[0].style.left)
+			,seekbarWidth = options.seekbarWidth - positionWidth
 			,soundPositionWidth = options.soundPositionWidth
 
-			// ,positionLeft = parseFloat($timePosition.attr('left'))
-			,positionLeft = parseFloat($timePosition[0].style.left)
 
-			,resultTime = positionLeft / seekbarWidth * soundLength;
+			,resultTime = (positionLeft + soundPositionWidth * 0.5) / (seekbarWidth - soundPositionWidth) * soundLength;
 
 			console.log(resultTime);
 
