@@ -220,7 +220,7 @@ unitySendData
 			}
 
 			$timeLength.css({
-				width:resultNum - soundPositionWidth * 0.5 + 'px'
+				width:resultNum - soundPositionWidth * 0.25 + 'px'
 			});
 
 			$timePosition.css({
@@ -244,7 +244,7 @@ unitySendData
 			,soundPositionWidth = options.soundPositionWidth
 
 
-			,resultTime = (positionLeft + soundPositionWidth * 0.5) / (seekbarWidth - soundPositionWidth) * soundLength;
+			,resultTime = (positionLeft - soundPositionWidth * 0.5) / (seekbarWidth - soundPositionWidth) * soundLength;
 
 			console.log(resultTime);
 
