@@ -51,7 +51,7 @@ unitySendData
 					,volumeLength:null
 					,volumeBarWidth:0
 					,volumePositionWidth:0
-					,volumeValue:0.5
+					,volumeValue:1
 
 					,voiceLoaded:0
 					,xmlLoaded:0
