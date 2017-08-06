@@ -27,7 +27,7 @@ commentSyncScroll
 					,sendPartsAttr:'sendArea'
 					,viewPartsAttr:'viewArea'
 					,viewAreaHeight:null
-					
+
 					,$timer:$('#Player [data-unitysyncdata-parts="timeView"]')
 					,nowTime:0
 					,$commentsDOM:null
@@ -154,9 +154,9 @@ commentSyncScroll
 						.dequeue();
 
 					})
-					
 
-					
+
+
 				}
 				else{
 					options.$viewParts.children().css(prefixedStyle({
@@ -208,7 +208,7 @@ commentSyncScroll
 					resultCommentArray.push(commentArray[i]);
 
 					for(j = i + 1; j < commentArrayLength; j++){
-						
+
 						if(nowTime == commentArray[j].time){
 							everCommentArray.push(commentArray[j]);
 							resultCommentArray.push(commentArray[j]);
@@ -363,7 +363,17 @@ commentSyncScroll
 				$commentWrapper.append($dl);
 
 				//コメントが最後じゃなかったら、resultIndexより前にDOMを追加
-				if(!isLast){
+				if(commentArray.length < 1) {
+
+					options.$viewParts.append($commentWrapper);
+					
+					commentArray.push({
+						$comment:$commentWrapper
+						,time:nowTime
+						,height:$commentWrapper.outerHeight()
+					});
+				}
+				else if(!isLast){
 					commentArray[resultIndex].$comment.before($commentWrapper);
 
 					commentArray.splice(resultIndex,0,{
@@ -382,7 +392,7 @@ commentSyncScroll
 						,height:$commentWrapper.outerHeight()
 					});
 				}
-				
+
 
 				// $commentWrapper.toggleClass(options.commentAddClass,false);
 
@@ -426,7 +436,7 @@ commentSyncScroll
 		destroy
 		********************/
 		,destroy:function(){
-			
+
 
 		}
 	};
