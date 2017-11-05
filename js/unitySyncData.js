@@ -209,7 +209,7 @@ unitySendData
 			// 横から何pxか計算
 			resultNum = seekbarWidth * percent + soundPositionWidth * 0.5;
 
-			// console.log(soundPosition);
+			console.log('soundLength:', soundLength, 'nowTime:', nowTime);
 
 			if($timeLength.hasClass(options.noTransitionClass)){
 				$timeLength.toggleClass(options.noTransitionClass,false);
