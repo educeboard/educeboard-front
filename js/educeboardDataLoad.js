@@ -352,6 +352,7 @@ pullDown
 							,uname:options.basicInfoObj.uname
 						});
 
+						options.$pwdInputObj.trigger('blur');
 
 						methods.simulationLoader.apply($this);
 
@@ -361,7 +362,7 @@ pullDown
 					else{
 						methods.applyCallback.apply([$this,'authFail']);
 
-						alert('パスワードが違うのかもしれません！');
+						alert('パスワードが違います。再度お試しください。');
 
 						options.$pwdInputObj.select();
 
