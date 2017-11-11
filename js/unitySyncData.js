@@ -166,7 +166,7 @@ unitySendData
 			,prevTime;
 
 			window.soundPosition = function(time){
-				// console.log(time);
+				console.log(time);
 				options.nowTime = time;
 				prevTime = options.prevTime;
 				// console.log(time,prevTime);
