@@ -122,6 +122,7 @@ unitySendData
 			methods.recieveTime.apply($this);
 			methods.recieveXMLLoadedFlag.apply($this);
 			methods.recieveTimeLength.apply($this);
+			methods.endControl.apply($this);
 		}
 
 
@@ -471,12 +472,7 @@ unitySendData
 					options.$loadingState.attr('aria-hidden',true);
 					options.$errorMessage.attr('aria-hidden',false);
 				}
-
-
-
 				// console.log('afterRecieveXMLLoadedFlag');
-
-
 			}
 		}
 
@@ -514,24 +510,6 @@ unitySendData
 				$this.on('mouseup.' + namespace, function(e){
 
 					$this.off('mouseup.' + namespace);
-
-
-					// $timePosition.on(transitionendEvent, function(){
-
-						// $(this).off(transitionendEvent);
-
-						// $timePosition.toggleClass(options.noTransitionClass,false);
-
-					// });
-
-					// $timeLength.on(transitionendEvent, function(){
-
-						// $(this).off(transitionendEvent);
-
-						// $timeLength.toggleClass(options.noTransitionClass,false);
-
-					// });
-
 
 					e.preventDefault();
 					options.isPlay = 0;
@@ -584,8 +562,27 @@ unitySendData
 				$pause.attr('aria-hidden',true);
 			}
 
-
 			options.unityObject.sendMessage("XMLLoader","playFlag",options.isPlay);
+		}
+
+		/********************
+		endControl
+		********************/
+		,endControl: function() {
+			var $this = $(this);
+			var options = $this.data(namespace);
+
+			window.endFlag = function(flag) {
+				if (flag === 1) {
+					options.isPlay = 1;
+					methods.playToggle.apply($this);
+
+					options.nowTime = 0;
+					options.prevTime = 0;
+
+					options.unityObject.sendMessage("XMLLoader", "soundPosition", options.nowTime);
+				}
+			}
 		}
 
 		/********************
