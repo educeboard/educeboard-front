@@ -114,7 +114,7 @@ body .elPulldownHide {
   margin-top: -50px;
 }
 
-#wrapper #login .mdLoginForm .elIdSelect:after {
+#wrapper #login .mdLoginForm .elIdSelect::after {
   content: "";
   display: block;
   clear: both;
@@ -465,7 +465,7 @@ body .elPulldownHide {
   position: relative;
 }
 
-#wrapper #movieSelect .mdMovieSelect .elItem .elTrialList li p:before, #wrapper #movieSelect .mdMovieSelect .elItem .elTrialList li p:after {
+#wrapper #movieSelect .mdMovieSelect .elItem .elTrialList li p::before, #wrapper #movieSelect .mdMovieSelect .elItem .elTrialList li p::after {
   content: "";
   display: block;
   position: absolute;
@@ -478,12 +478,12 @@ body .elPulldownHide {
   margin-top: -10px;
 }
 
-#wrapper #movieSelect .mdMovieSelect .elItem .elTrialList li p:after {
+#wrapper #movieSelect .mdMovieSelect .elItem .elTrialList li p::after {
   right: 2px;
   border-left: 10px solid #333;
 }
 
-#wrapper #movieSelect .mdMovieSelect .elItem .elTrialList li p:hover:after {
+#wrapper #movieSelect .mdMovieSelect .elItem .elTrialList li p:hover::after {
   border-left: 10px solid #777;
 }
 
@@ -1212,7 +1212,8 @@ body .elPulldownHide {
   overflow: hidden;
 }
 
-[data-unitySyncData-parts="loadOverlay"] .elErrorAvoidance .elIDInput dt, [data-unitySyncData-parts="loadOverlay"] .elErrorAvoidance .elIDInput dd {
+[data-unitySyncData-parts="loadOverlay"] .elErrorAvoidance .elIDInput dt,
+[data-unitySyncData-parts="loadOverlay"] .elErrorAvoidance .elIDInput dd {
   margin-top: 10px;
 }
 
