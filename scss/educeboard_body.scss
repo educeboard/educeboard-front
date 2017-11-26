@@ -491,7 +491,7 @@ body {
               }
 
               &::after {
-                @extend p:: before;
+                @extend p::before;
                 right: 2px;
                 border-left: 10px solid #333;
               }
@@ -677,7 +677,7 @@ body {
                   }
 
                   a::after {
-                    @extend a:: before;
+                    @extend a::before;
                     left: auto;
                     right: 18px;
                   }
