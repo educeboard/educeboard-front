@@ -517,6 +517,10 @@ body .elPulldownHide {
   z-index: 0;
 }
 
+#wrapper #educeboard #educeboardMovie #unityPlayer canvas {
+  display: block;
+}
+
 #wrapper #educeboard #educeboardMovie #Player {
   background: #333;
   position: relative;
