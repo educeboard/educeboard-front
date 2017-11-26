@@ -167,7 +167,7 @@ unitySendData
 			,prevTime;
 
 			window.soundPosition = function(time){
-				console.log(time);
+				// console.log(time);
 				options.nowTime = time;
 				prevTime = options.prevTime;
 				// console.log(time,prevTime);
@@ -247,7 +247,7 @@ unitySendData
 
 			,resultTime = (positionLeft - soundPositionWidth * 0.5) / seekbarWidth * soundLength;
 
-			console.log(resultTime);
+			// console.log(resultTime);
 
 
 			options.unityObject.sendMessage("XMLLoader", "soundPosition", resultTime);
@@ -574,6 +574,7 @@ unitySendData
 
 			window.endFlag = function(flag) {
 				if (flag === 1) {
+					console.log('endFlag', flag);
 					options.isPlay = 1;
 					methods.playToggle.apply($this);
 
