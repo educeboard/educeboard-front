@@ -577,11 +577,6 @@ unitySendData
 					console.log('endFlag', flag);
 					options.isPlay = 1;
 					methods.playToggle.apply($this);
-
-					options.nowTime = 0;
-					options.prevTime = 0;
-
-					options.unityObject.sendMessage("XMLLoader", "soundPosition", options.nowTime);
 				}
 			}
 		}
