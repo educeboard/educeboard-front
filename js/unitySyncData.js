@@ -461,7 +461,7 @@ unitySendData
 				options.xmlLoadedFlag = flag;
 
 				if(flag == 1){
-					console.log(flag);
+					console.log('xmlLoadFlag', flag)
 					methods.setEvent.apply($this);
 					methods.playToggle.apply($this);
 					options.$loadOverlay.attr('aria-hidden',true);
@@ -493,6 +493,7 @@ unitySendData
 			// 再生ボタン
 			$this.on('click.' + namespace , $playButton.selector,function(e){
 				e.preventDefault();
+				console.log('clicked playButton');
 				methods.playToggle.apply($this);
 			});
 
@@ -500,6 +501,7 @@ unitySendData
 			$this.on('mousedown.' + namespace, $timePosition.selector, function(e){
 				e.preventDefault();
 				options.isPlay = 1;
+				console.log('start moving seekbar')
 				methods.playToggle.apply($this);
 
 				$timePosition.toggleClass(options.noTransitionClass,true);
@@ -562,6 +564,7 @@ unitySendData
 				$pause.attr('aria-hidden',true);
 			}
 
+			console.log('unity playFlag call');
 			options.unityObject.sendMessage("XMLLoader","playFlag",options.isPlay);
 		}
 
