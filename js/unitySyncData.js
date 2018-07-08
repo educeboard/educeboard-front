@@ -6,7 +6,8 @@ unitySendData
 ;(function($){
 	var namespace = 'unitySyncData'
 
-	,transitionendEvent = 'webkitTransitionEnd.' + namespace + ' msTransitionEnd.' + namespace + ' transitionend.' + namespace;
+	,transitionendEvent = 'webkitTransitionEnd.' + namespace + ' msTransitionEnd.' + namespace + ' transitionend.' + namespace
+	,$window = $(window);
 
 	/********************
 	methods
@@ -247,7 +248,7 @@ unitySendData
 
 			,resultTime = (positionLeft - soundPositionWidth * 0.5) / seekbarWidth * soundLength;
 
-			// console.log(resultTime);
+			console.log('resultTime', resultTime);
 
 
 			options.unityObject.sendMessage("XMLLoader", "soundPosition", resultTime);
@@ -509,9 +510,9 @@ unitySendData
 				$timeLength.toggleClass(options.noTransitionClass,true);
 
 				// シークバーを動かし終えた時
-				$this.on('mouseup.' + namespace, function(e){
+				$window.on('mouseup.' + namespace, function(e){
 
-					$this.off('mouseup.' + namespace);
+					$window.off('mouseup.' + namespace);
 
 					e.preventDefault();
 					options.isPlay = 0;
